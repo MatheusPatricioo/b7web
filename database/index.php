@@ -1,11 +1,18 @@
+
 <?php
-$pdo = new PDO ("mysql:dbname=test;host=localhost", "root","");
+//CRUD: O INDEX SERVIRIA COMO O "R", DO CONCEITO CRUD.
+//R:Read (ler)
+require 'config.php';
+$sql = $pdo->query("SELECT * FROM usuarios");
+?>
 
-$sql = $pdo->query('SELECT * FROM usuarios');
+<a href="adicionar.php">ADICIONAR USUARIO</a>
 
-echo "TOTAL: ".$sql->rowCount();
-
-$dados = $sql->fetchAll( PDO::FETCH_ASSOC );
-
-echo '<pre>';
-print_r($dados);
+<table border ="1" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>EMAIL</th>
+        <th>AÇÕES</th>
+</tr>
+</table>
