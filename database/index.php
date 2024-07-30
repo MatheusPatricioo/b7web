@@ -39,7 +39,7 @@ if($sql->rowCount() >0) {
             <td> <?php echo $usuario['email']; ?></td>
             <td>
                 <a href="editar.php?ID=<?=$usuario['ID']; ?>"> [Editar] </a>
-                <a href="excluir.php?ID=<?=$usuario['ID']; ?>"> [Excluir] </a>
+                <a href="excluir.php?ID=<?=$usuario['ID']; ?>" onclick="return confirm('Tem certeza da sua ação?')"> [Excluir] </a>
             </td>
         </tr>
 

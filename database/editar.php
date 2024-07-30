@@ -9,9 +9,9 @@ $id = filter_input(INPUT_GET, 'ID');
 // Verifica se o ID foi enviado
 if ($id) {
     // Prepara a consulta SQL para buscar o usuário pelo ID
-    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE ID = :ID");
     // Associa o valor do ID à consulta
-    $sql->bindValue(':id', $id);
+    $sql->bindValue(':ID', $id);
     // Executa a consulta
     $sql->execute();
 
@@ -35,7 +35,7 @@ if ($id) {
 <h1>Editar Usuário</h1>
 
 <form method="POST" action="Editar_action.php">
-    <input type="hidden" name="id" value="<?=$info['ID'];?>" />
+    <input type="hidden" name="ID" value="<?=$info['ID'];?>" />
 
     <label>
         Nome:<br/>
